@@ -354,16 +354,16 @@ dispatch_semaphore_signal(_lock);
     return self;
 }
 
-+ (YYTextLayout *)layoutWithContainerSize:(CGSize)size text:(NSAttributedString *)text {
++ (instancetype)layoutWithContainerSize:(CGSize)size text:(NSAttributedString *)text {
     YYTextContainer *container = [YYTextContainer containerWithSize:size];
     return [self layoutWithContainer:container text:text];
 }
 
-+ (YYTextLayout *)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text {
++ (instancetype)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text {
     return [self layoutWithContainer:container text:text range:NSMakeRange(0, text.length)];
 }
 
-+ (YYTextLayout *)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text range:(NSRange)range {
++ (instancetype)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text range:(NSRange)range {
     YYTextLayout *layout = NULL;
     CGPathRef cgPath = nil;
     CGRect cgPathBox = {0};
@@ -417,7 +417,7 @@ dispatch_semaphore_signal(_lock);
         [((NSMutableAttributedString *)text) yy_setClearColorToJoinedEmoji];
     }
     
-    layout = [[YYTextLayout alloc] _init];
+    layout = [[self alloc] _init];
     layout.text = text;
     layout.container = container;
     layout.range = range;

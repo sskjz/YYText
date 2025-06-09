@@ -163,7 +163,7 @@ extern const CGSize YYTextContainerMaxSize;
  @param text The text (if nil, returns nil).
  @return A new layout, or nil when an error occurs.
 */
-+ (nullable YYTextLayout *)layoutWithContainerSize:(CGSize)size text:(NSAttributedString *)text;
++ (nullable instancetype)layoutWithContainerSize:(CGSize)size text:(NSAttributedString *)text;
 
 /**
  Generate a layout with the given container and text.
@@ -172,7 +172,7 @@ extern const CGSize YYTextContainerMaxSize;
  @param text      The text (if nil, returns nil).
  @return A new layout, or nil when an error occurs.
  */
-+ (nullable YYTextLayout *)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text;
++ (nullable instancetype)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text;
 
 /**
  Generate a layout with the given container and text.
@@ -183,7 +183,7 @@ extern const CGSize YYTextContainerMaxSize;
     length of the range is 0, it means the length is no limit.
  @return A new layout, or nil when an error occurs.
  */
-+ (nullable YYTextLayout *)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text range:(NSRange)range;
++ (nullable instancetype)layoutWithContainer:(YYTextContainer *)container text:(NSAttributedString *)text range:(NSRange)range;
 
 /**
  Generate layouts with the given containers and text.
